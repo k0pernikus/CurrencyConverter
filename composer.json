@@ -1,8 +1,17 @@
 {
   "name": "k0pernikus/currency-converter",
+  "type": "library",
+  "keywords": [
+    'ecb',
+    'currency',
+    'conversion'
+    'converter',
+    'european central bank',
+    'euro'
+  ],
+  "description": "Currency conversion using the Eurpean Central bank rates",
   "version": "1.0.0",
   "prefer-stable": true,
-  "description": "Currency conversion using the Eurpean Central bank rates",
   "autoload": {
     "psr-4": {
       "Kopernikus\\": [
@@ -12,6 +21,7 @@
     }
   },
   "require": {
+    "php": ">=5.4"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
