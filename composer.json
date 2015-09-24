@@ -2,12 +2,12 @@
   "name": "k0pernikus/currency-converter",
   "type": "library",
   "keywords": [
-    'ecb',
-    'currency',
-    'conversion'
-    'converter',
-    'european central bank',
-    'euro'
+    "ecb",
+    "currency",
+    "conversion"
+    "converter",
+    "european central bank",
+    "euro"
   ],
   "description": "Currency conversion using the Eurpean Central bank rates",
   "version": "1.0.0",
