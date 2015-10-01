@@ -1,4 +1,5 @@
-# CurrencyConverter
+# CurrencyConverter [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/k0pernikus/currencyconverter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/k0pernikus/CurrencyConverter/?branch=master)
+
 
 # Installation
 
