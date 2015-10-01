@@ -1,7 +1,9 @@
 # CurrencyConverter [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/k0pernikus/currencyconverter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/k0pernikus/CurrencyConverter/?branch=master)
 
+## About
+Currency Converter supporting the [European Central Bank XML](http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml).
 
-# Installation
+## Installation
 
 [Get composer](https://getcomposer.org/) and then require the library using:
 
@@ -9,9 +11,7 @@
 composer require k0pernikus/currency-converter
 ```
 
-Currency Converter supporting the [European Central Bank XML](http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml).
-
-# Usage
+## Usage
 ```
     $converter = CurrencyConverterFactory::createCurrencyConverter();
 
@@ -23,6 +23,6 @@ Currency Converter supporting the [European Central Bank XML](http://www.ecb.eur
         ->convert($euroPrice);
 ```
 
-# TODO:
+## TODOs
 
 * symfony2 bundle
