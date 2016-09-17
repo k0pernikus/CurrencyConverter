@@ -12,6 +12,25 @@ class CurrencyConverterFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected $currencyConverter;
 
+    public function testAssertXml()
+    {
+        $multilineXml = <<<XML
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>
+XML;
+
+        $singleLineXml = <<<XML
+<note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>
+XML;
+        $this->assertXmlStringEqualsXmlString($multilineXml, $singleLineXml,'Xml should be equal');
+
+
+    }
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
