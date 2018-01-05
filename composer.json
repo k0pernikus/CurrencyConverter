@@ -1,38 +1,47 @@
 {
-  "name": "k0pernikus/currency-converter",
-  "type": "library",
-  "keywords": [
-    "ecb",
-    "currency",
-    "conversion",
-    "converter",
-    "european central bank",
-    "euro"
-  ],
-  "description": "Currency conversion using the Eurpean Central bank rates",
-  "version": "1.0.2",
-  "prefer-stable": true,
-  "autoload": {
-    "psr-4": {
-      "Kopernikus\\": [
-        "src/",
-        "tests/"
-      ]
-    }
-  },
-  "require": {
-    "php": ">=5.4"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^4.8",
-    "escapestudios/symfony2-coding-standard": "^2.7",
-    "scrutinizer/ocular": "^1.1"
-  },
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Philipp Kretzschmar",
-      "email": "philipp.kretzschmar@gmail.com"
-    }
-  ]
+    "name": "k0pernikus/currency-converter",
+    "type": "library",
+    "keywords": [
+        "ecb",
+        "currency",
+        "conversion",
+        "converter",
+        "european central bank",
+        "euro"
+    ],
+    "description": "Currency conversion using the Eurpean Central bank rates",
+    "version": "1.0.3",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "./vendor/bin/phpunit -c phpunit.xml"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kopernikus\\": [
+                "src/"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kopernikus\\": [
+                "tests/"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "escapestudios/symfony2-coding-standard": "^2.7",
+        "scrutinizer/ocular": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philipp Kretzschmar",
+            "email": "philipp.kretzschmar@gmail.com"
+        }
+    ]
 }

@@ -12,23 +12,15 @@ class CurrencyConverterFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected $currencyConverter;
 
-    public function testAssertXml()
+    public function rateProvider()
     {
-        $multilineXml = <<<XML
-<note>
-    <to>Tove</to>
-    <from>Jani</from>
-    <heading>Reminder</heading>
-    <body>Don't forget me this weekend!</body>
-</note>
-XML;
-
-        $singleLineXml = <<<XML
-<note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>
-XML;
-        $this->assertXmlStringEqualsXmlString($multilineXml, $singleLineXml,'Xml should be equal');
-
-
+        return [
+            // read as: 200 EUR should be converted to 223 USD
+            [200, 'EUR', 223, 'USD'],
+            [330, 'USD', 2106.23, 'CNY'],
+            [1, 'RUB', .06, 'BRL'],
+            [14, 'USD', 12.56, 'EUR'],
+        ];
     }
 
     /**
@@ -42,32 +34,26 @@ XML;
     }
 
     /**
-     *
+     * @dataProvider rateProvider
+     * @param int $amountToConvert
+     * @param string $fromCurrency
+     * @param int $expected
+     * @param string $toCurrency
      */
-    public function testPriceConversion()
+    public function testPriceConversion(
+        $amountToConvert,
+        $fromCurrency,
+        $expected,
+        $toCurrency)
     {
         $actual = $this->currencyConverter
-            ->setFromCurrency('EUR')
-            ->setToCurrency('USD')
-            ->convert(200);
-        $this->assertEquals(223, $actual, 'converts 200 euro');
+            ->setFromCurrency($fromCurrency)
+            ->setToCurrency($toCurrency)
+            ->convert($amountToConvert);
 
-        $actual = $this->currencyConverter
-            ->setFromCurrency('USD')
-            ->setToCurrency('CNY')
-            ->convert(330);
-        $this->assertEquals(2106.23, $actual, 'usd in cny');
-
-        $actual = $this->currencyConverter
-            ->setFromCurrency('RUB')
-            ->setToCurrency('BRL')
-            ->convert(1);
-        $this->assertEquals(0.06, $actual);
-
-        $actual = $this->currencyConverter
-            ->setFromCurrency('USD')
-            ->setToCurrency('EUR')
-            ->convert(14);
-        $this->assertEquals(12.56, $actual);
+        $this->assertEquals(
+            $expected,
+            $actual,
+            "should convert {$amountToConvert} {$fromCurrency} to {$expected} ${toCurrency} but got ${actual} ${toCurrency}");
     }
 }
